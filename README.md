@@ -13,6 +13,7 @@ tqdm==4.61.0
 ```
 All the code is run with python 3.7.9.
 
+
 ## Preliminaries
 <ul>
   <li>You need to have an AWS account on https://aws.amazon.com/.</li>
@@ -35,7 +36,7 @@ and [here](https://docs.aws.amazon.com/general/latest/gr/textract.html).
 
 
 ## Getting the Data
-### Preprocessing
+### Download Raw PDFs
 IDL has a somewhat unorthodox file structure. We keep this structure also in our annotations.
 ```
 f/
@@ -50,7 +51,8 @@ First, we download the IDL documents to our local drive even though we only give
 Reasons are as follows.
 <ul>
 <li>There are some empty or invalid or corrupted documents. We want to identify those before giving it to Textract.</li>
-<li>There are some documents that has more than 3000 pages which makes the Textract hang forever.</li>
+<li>There are some documents that has more than 3000 pages which makes the Textract hang forever.
+</li>
 </ul>>
 
 So to download the data of IDL, you can run the command:
@@ -61,6 +63,7 @@ You can also specify the specific folder to download by changing into
 `s3://edu.ucsf.industrydocuments.artifacts/f` or `s3://edu.ucsf.industrydocuments.artifacts/g/h`.
 You get the idea!
 
+### Cleaning
 Now, we are done with the preliminaries and know about the hard limits and downloaded the pdfs, 
 let's get to work.
 
@@ -93,8 +96,9 @@ Then you need to give AmazonS3FullAccess and AmazonTextractFullAccess to these a
 ![S1!](./screenshots/iam_users_textract_permission.png)
 
 Then click Next and Review and Create user. 
-Once you have the user, it will give  Access key ID and Secret access key. Save them and put them inside the `KEYS` variable in `run_textract.py`.
-
+Once you have the user, it will give  Access key ID and Secret access key. 
+Save them and put them inside the `KEYS` variable in `run_textract.py`.
+Since `KEYS` is a list of tuple, first element of tuple should be Access key ID and the second element Secret access key
 
 **NOW, DO THIS 16 TIMES!** No, I am not kidding. 
 Since we want to parallelize all the process, we have to create 16 IAM users, one user for each core.
@@ -106,6 +110,7 @@ python run_textract.py
 
 PS: If at any point, something happens and the code stops (which is bound to happen), 
 fear not, just run the command again, and it will skip all the files it already processed.
+
 ## Download the Data
 Well, we all know why you are here, it is certainly not the RAMBLING that is going on above. 
 It is for the data. The link to download the raw OCR annotations are [here.](https)
@@ -116,3 +121,27 @@ For the first 1M pages 1.5$ per page and after 1M, each page costs 0.6$.
 So, in total, the whole annotation cost ~18K$. 
 We are thankful to Amazon for the scholarship and fellowship. 
 And special thanks to [IDL](https://www.industrydocuments.ucsf.edu/) for putting the data in S3 and making it public. 
+
+## Imaginary Frequently Asked Questions (iFAQ)
+**Q:** How much time did it take to get the data?\
+**A:** Around 1 month.
+
+**Q:** Where did you store all the data in your local computer?\
+**A:** We had to buy a 14TB external drive.
+
+**Q:** How many machines did you use?\
+**A:** Single machine, my university computer with 12 cores.
+
+**Q:** Why are you doing this?\
+**A:** Science? Open Science? I am crazy? I don't know?
+
+**Q:** This data is nice but I don't have the resources to train with this data?\
+**A:** Not a question but I feel/know/am you!
+
+**Q:** What is the licence?\
+**A:** [WTFPL](https://en.wikipedia.org/wiki/WTFPL) from my side. Check it from the [IDL](https://www.industrydocuments.ucsf.edu/) side. 
+
+More to be added...
+
+## Conclusion
+To err is human.
