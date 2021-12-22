@@ -46,8 +46,9 @@ f/
 ...
 ```
 Each folder has 16 folders inside and 4 depth and at the final depth usually around ~220 pdfs.
+You can check the folder structure from AWS in [here.](https://s3.console.aws.amazon.com/s3/buckets/edu.ucsf.industrydocuments.artifacts?region=us-west-2)
 
-First, we download the IDL documents to our local drive even though we only give point the S3 location when we use Textract.
+Now, we download the IDL documents to our local drive even though we only give point the S3 location when we use Textract.
 Reasons are as follows.
 <ul>
 <li>There are some empty or invalid or corrupted documents. We want to identify those before giving it to Textract.</li>
@@ -92,8 +93,10 @@ Put in the username, check the box on Access key - Programmatic access, click Ne
 ![S1!](./screenshots/iam_users_first.png)
 
 Then you need to give AmazonS3FullAccess and AmazonTextractFullAccess to these accounts.
-![S1!](./screenshots/iam_users_s3_permission.png)
-![S1!](./screenshots/iam_users_textract_permission.png)
+
+S3 Permission           |  Textract Permission
+:-------------------------:|:-------------------------:
+![S1!](./screenshots/iam_users_s3_permission.png)| ![S1!](./screenshots/iam_users_textract_permission.png)
 
 Then click Next and Review and Create user. 
 Once you have the user, it will give  Access key ID and Secret access key. 
