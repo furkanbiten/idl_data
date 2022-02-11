@@ -116,7 +116,7 @@ fear not, just run the command again, and it will skip all the files it already 
 
 ## Download the Data
 Well, we all know why you are here, it is certainly not the RAMBLING that is going on above. 
-It is for the data. The link to download the raw OCR annotations are [here.](https)
+It is for the data. The link to download the raw OCR annotations are [here](http://datasets.cvc.uab.es/UCSF_IDL/index.txt).
 
 ## Acknowledgement
 Amazon's OCR engine Textract costs quite a lot of money. 
