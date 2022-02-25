@@ -3,7 +3,7 @@ Welcome! This repository contains the code to obtain the OCR annotations of
 Industry Document Library (IDL) located in https://www.industrydocuments.ucsf.edu/.
 
 We exclusively used the Amazon's OCR engine Textract to get the OCR annotations. 
-We will explain in-depth how we use Textract and parallize to get annotations for **21 Million pages**.
+We will explain in-depth how we use Textract and parallize to get annotations for **26 Million pages**.
 But first dependencies/requirements:
 ```text
 botocore==1.23.10
