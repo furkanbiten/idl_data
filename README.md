@@ -122,6 +122,13 @@ Since this can take a while (50GB * 25 times), you can first download a sample o
 
 In addition, we have processed the OCR information by keeping only the words and their bounding boxes for each document page and arranged them in files of 500,000 pages. Therefore, the processed files consists on 54 files that can be downloaded [here](http://datasets.cvc.uab.es/UCSF_IDL/IMDBs/imdbs_v2.tar.gz). Again, since this can also take some time, you can download one of those files as an example if you want to just have a look [here](http://datasets.cvc.uab.es/UCSF_IDL/Samples/imdb_sample_v2.tar.gz).
 
+Here is a small script to download all the raw annotations and extract:
+```bash
+wget http://datasets.cvc.uab.es/UCSF_IDL/index.txt
+wget -i index.txt
+# extract folder f, can be repeated for g,h,j,k
+cat f.*|  tar xvzf -
+```
 ### OCR format.
 Each OCR file corresponds to a single document with all its pages. Amazon Textract provides detections at three different levels: Page, Line and Word. The detections can be found in the key *Blocks*, and the detection level can be found in the key *BlockType* of each block. For each detection you can find the *Confidence* and the bounding box or polygon in the key *Geometry*. The bounding box is **normalized** and in the format **(Left, Top, Width, Height)**. In addition, for each block Textract also provides the relationship that allows to link the different hierarchical levels of words, lines and pages. However, if you are interested in a particular level you don't need to follow these relationships, since you can just get the text for each block with the level you prefer and ignore the rest because the information is duplicated but grouped in different ways.
 
