@@ -120,7 +120,7 @@ It is for the data. The links to download the raw OCR annotations are [here](htt
 
 Since this can take a while (50GB * 25 times), you can first download a sample of the data [here](http://datasets.cvc.uab.es/UCSF_IDL/Samples/ocr_imgs_sample.zip). So you can start having a look, understanding the structure, preparing your code, etc... This sample zip contains not only the OCR information but also the images, which are not included in the rest of the OCR files.
 
-In addition, we have processed the OCR information by keeping only the words and their bounding boxes for each document page and arranged them in files of 500,000 pages. Therefore, the processed files consists on 54 files that can be downloaded [here](http://datasets.cvc.uab.es/UCSF_IDL/IMDBs/imdbs_v2.tar.gz). Again, since this can also take some time, you can download one of those files as an example if you want to just have a look [here](http://datasets.cvc.uab.es/UCSF_IDL/Samples/imdb_sample_v2.tar.gz).
+In addition, we have processed the OCR information by keeping only the words and their bounding boxes for each document page and arranged them in files of 500,000 pages. Therefore, the processed files consists on 54 [imdb files](http://datasets.cvc.uab.es/UCSF_IDL/IMDBs/imdbs_v2.tar.gz). As this can also take some time, we provide a subset with [imdb samples](http://datasets.cvc.uab.es/UCSF_IDL/Samples/imdb_sample_v2.tar.gz), so you can work on your code while downloading the rest of the data.
 
 Here is a small script to download all the raw annotations and extract:
 ```bash
