@@ -2,6 +2,8 @@
 Welcome! This repository contains the code to obtain the OCR annotations of 
 Industry Document Library (IDL) located in https://www.industrydocuments.ucsf.edu/.
 
+More details can be found in the [paper.](https://arxiv.org/pdf/2202.12985.pdf)
+
 We exclusively used the Amazon's OCR engine Textract to get the OCR annotations. 
 We will explain in-depth how we use Textract and parallize to get annotations for **26 Million pages**.
 But first dependencies/requirements:
@@ -165,3 +167,13 @@ More to be added...
 
 ## Conclusion
 To err is human.
+
+## To Cite
+```
+@article{biten2022ocr,
+  title={Ocr-idl: Ocr annotations for industry document library dataset},
+  author={Biten, Ali Furkan and Tito, Ruben and Gomez, Lluis and Valveny, Ernest and Karatzas, Dimosthenis},
+  journal={arXiv preprint arXiv:2202.12985},
+  year={2022}
+}
+```
