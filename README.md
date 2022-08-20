@@ -86,8 +86,8 @@ python move_big_files.py
 
 ### Getting Metadata of IDL
 
-All the metadata we provided in the paper can be downloaded and is located in `[https://www.industrydocumentslibrary.ucsf.edu/dataset](https://www.industrydocumentslibrary.ucsf.edu/dataset)`.
-For more information, you can go and check here: `https://www.industrydocuments.ucsf.edu/research-tools/api/`.
+All the metadata we provided in the paper can be downloaded and is located in [https://www.industrydocumentslibrary.ucsf.edu/dataset](https://www.industrydocumentslibrary.ucsf.edu/dataset).
+For more information, you can go and check here: [https://www.industrydocuments.ucsf.edu/research-tools/api/](https://www.industrydocuments.ucsf.edu/research-tools/api/).
 
 ### Running Textract
 Now that we more or less cleaned the data, we need to run Textract. 
